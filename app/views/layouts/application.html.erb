@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Devise</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if user_signed_in? %>
+    You're logged in as <%= current_user.email %>
+  <% else %>
+    <%= link_to "log in", new_user_session_path %>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
